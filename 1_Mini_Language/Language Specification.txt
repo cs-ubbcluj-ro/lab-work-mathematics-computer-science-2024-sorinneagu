@@ -14,13 +14,13 @@ Language Specification:
 
       a.Special symbols, representing:
 
-- operators + - * / := < <= = >=
+- operators + - * / := < <= = >= MOD
 
 - separators [ ] { }  : ; space
 
 - reserved words:
 
-    array  char  const do else  if int  of program read 
+    array  char  const do else  if int  of program read MOD
 
 then var while write
 
@@ -98,4 +98,4 @@ declaration ::= IDENTIFIER ":" type
 
   condition ::= expression RELATION expression
 
-   RELATION ::= "<" | "<=" | "=" | "<>" | ">=" | ">"
+   RELATION ::= "<" | "<=" | "=" | "<>" | ">=" | ">" | "MOD"
