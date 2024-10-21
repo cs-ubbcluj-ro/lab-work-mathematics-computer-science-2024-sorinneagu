@@ -98,4 +98,4 @@ declaration ::= IDENTIFIER ":" type
 
   condition ::= expression RELATION expression
 
-   RELATION ::= "<" | "<=" | "=" | "<>" | ">=" | ">" | "MOD"
+   RELATION ::= "<" | "<=" | "=" | "<>" | ">=" | ">" 
