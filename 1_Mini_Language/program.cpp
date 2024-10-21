@@ -20,7 +20,7 @@ int main() {
         if (isPrime){
         cout << i << " ";
         }
-    }
-
-   return 0;
+    };
+    getchar();
+    return 0;
 }
