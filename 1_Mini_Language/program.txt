@@ -1,0 +1,28 @@
+VAR 
+    k : INTEGER; #  the limit number
+    i : INTEGER; #  the number that is checked to be prime
+    j : INTEGER; #  the number that is used to check divisibility
+    isPrime : BOOLEAN; # a boolean that is used to check if a number is prime
+
+BEGIN
+    READ(k); # we read the limit number
+    
+    i := 2; # we assign to i the smallest prime number
+    WHILE i < k DO # we loop through the prime check 
+        isPrime := TRUE; # we assign the boolean to be true
+        
+        j := 2; # we assign j 2 and we increment it in the loop to check for primes between 2 and sqrt of i
+        WHILE j * j <= i DO
+            IF i MOD j = 0 THEN
+                isPrime := FALSE; # if the modulo is 0 it means that the number is not prime
+            END;
+            j := j + 1; # we increment j
+        END;
+        
+        IF isPrime THEN # if isPrime is true we print i
+            WRITE(i);
+        END;
+        
+        i := i + 1; # we increment i 
+    END;
+END.
