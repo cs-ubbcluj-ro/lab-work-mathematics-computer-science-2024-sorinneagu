@@ -1,0 +1,6 @@
+WHILE(a<b)
+begin
+    b:=100;
+    a:=5;
+    a:=a+a;
+end
