@@ -1,0 +1,14 @@
+# Documentation
+
+## Input File Format (FA.in)
+
+The input file must follow the format described in Extended Backus-Naur Form (EBNF):
+
+```
+FA       ::= STATES \n ALPHABET \n START_STATE \n FINAL_STATES \n TRANSITIONS
+STATES   ::= state (',' state)*
+ALPHABET ::= symbol (',' symbol)*
+START_STATE ::= state
+FINAL_STATES ::= state (',' state)*
+TRANSITIONS ::= (state ',' symbol ',' state \n)+
+```
