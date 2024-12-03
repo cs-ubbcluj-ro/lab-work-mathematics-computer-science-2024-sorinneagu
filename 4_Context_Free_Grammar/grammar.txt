@@ -1,0 +1,70 @@
+# Program structure
+Program → "VAR" DeclList ";" CmpdStmt "."
+
+# Declarations
+
+DeclList → Declaration | Declaration ";" DeclList
+
+Declaration → IDENTIFIER ":" Type
+
+Type → Type1 | ArrayDecl
+
+Type1 → "BOOLEAN" | "CHAR" | "INTEGER" | "REAL"
+
+ArrayDecl → "ARRAY" "[" Nr "]" "OF" Type1
+
+
+# Compound statements
+
+CmpdStmt → "BEGIN" StmtList "END"
+
+StmtList → Stmt | Stmt ";" StmtList
+
+Stmt → SimplStmt | StructStmt
+
+# Simple statements
+
+SimplStmt → AssignStmt | IOStmt
+
+AssignStmt → IDENTIFIER ":=" Expression
+
+IOStmt → "READ" "(" IDENTIFIER ")" | "WRITE" "(" IDENTIFIER ")"
+
+
+# Expressions
+
+Expression → Expression "+" Term | Term
+
+Term → Term "*" Factor | Factor
+
+Factor → "(" Expression ")" | IDENTIFIER
+
+# Structured statements
+
+StructStmt → CmpdStmt | IfStmt | WhileStmt
+
+IfStmt → "IF" Condition "THEN" Stmt ["ELSE" Stmt]
+
+WhileStmt → "WHILE" Condition "DO" Stmt
+
+Condition → Expression Relation Expression
+
+Relation → "<" | "<=" | "=" | "<>" | ">=" | ">"
+
+# Identfiers
+IDENTIFIER → Letter {Letter | Digit}
+Letter → "A" | "B" | ... | "Z" | "a" | "b" | ... | "z"
+Digit → "0" | "1" | ... | "9"
+
+# Numbers
+Nr → Digit {Digit}
+
+# Constants
+
+NoConst → "+" Nr | "-" Nr | Nr
+
+CharacterConst → "'" Letter "'" | "'" Digit "'"
+
+StringConst → '"' String '"'
+String → Char {String}
+Char → Letter | Digit

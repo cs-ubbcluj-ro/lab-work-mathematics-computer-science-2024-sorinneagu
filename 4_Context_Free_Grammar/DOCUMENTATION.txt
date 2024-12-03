@@ -1,0 +1,157 @@
+1. Program Structure
+
+The program consists of the following main components:
+
+- Variable Declarations: All variable declarations must appear at the beginning of the program.
+- Compound Statements: The body of the program, where the actual logic and operations are defined, must be enclosed in a BEGIN ... END block.
+
+File Structure:
+----------------
+VAR declaration_list ;
+BEGIN statement_list END.
+
+Explanation:
+----------------
+- The program starts with the keyword "VAR", followed by a list of declarations and ending with a semicolon.
+- After the declarations, the program contains a compound statement, enclosed in BEGIN and END. The compound statement contains the main body of the program, with the logic defined as a list of statements.
+- The program ends with a period (".")
+
+2. Declarations
+
+Variable declarations are listed under the "VAR" section of the program.
+
+File Structure:
+----------------
+declaration_list ::= declaration | declaration ; declaration_list
+declaration ::= IDENTIFIER : type
+
+Explanation:
+----------------
+- Each variable is declared with an identifier (name) followed by a colon (:) and its type.
+- Types can be one of BOOLEAN, CHAR, INTEGER, or REAL. Arrays are also supported as a type.
+
+3. Types and Array Declarations
+
+The language supports simple data types and arrays.
+
+File Structure:
+----------------
+type ::= type1 | array_decl
+type1 ::= BOOLEAN | CHAR | INTEGER | REAL
+array_decl ::= ARRAY [ Nr ] OF type1
+
+Explanation:
+----------------
+- A variable can either be of a basic type (BOOLEAN, CHAR, INTEGER, REAL) or an array type.
+- Arrays are declared using the "ARRAY" keyword, with the array size specified by a numeric value (represented as Nr) enclosed in square brackets ([]).
+- The "OF" keyword is used to specify the type of elements stored in the array.
+
+4. Statements
+
+The program contains two primary categories of statements: simple and structured.
+
+Simple Statements
+-----------------
+These are the basic operations, such as assignments and input/output operations.
+
+File Structure:
+----------------
+simplstmt ::= assignstmt | iostmt
+assignstmt ::= IDENTIFIER := expression
+iostmt ::= READ ( IDENTIFIER ) | WRITE ( IDENTIFIER )
+
+Explanation:
+----------------
+- Assignments are done using the := operator, where an identifier is assigned the value of an expression.
+- Input/Output statements involve reading from or writing to an identifier using the READ or WRITE keywords.
+
+Structured Statements
+---------------------
+These statements represent control flow and include compound statements, conditionals, and loops.
+
+File Structure:
+----------------
+structstmt ::= cmpdstmt | ifstmt | whilestmt
+cmpdstmt ::= BEGIN stmtlist END
+ifstmt ::= IF condition THEN stmt [ ELSE stmt ]
+whilestmt ::= WHILE condition DO stmt
+
+Explanation:
+----------------
+- Compound Statements: Enclosed in BEGIN and END keywords, containing a list of other statements.
+- If Statements: A conditional that can optionally have an ELSE clause.
+- While Statements: A loop that executes a statement while a condition is true.
+
+5. Expressions and Terms
+
+Expressions form the backbone of the language's arithmetic and logical operations. They consist of terms and factors combined with operators.
+
+File Structure:
+----------------
+expression ::= expression + term | term
+term ::= term * factor | factor
+factor ::= ( expression ) | IDENTIFIER
+
+Explanation:
+----------------
+- Expressions are combinations of terms, where terms are connected by the + operator.
+- Terms are composed of factors, where multiplication (*) is the operator between terms.
+- Factors are either parenthesized expressions or simple identifiers (variables or constants).
+
+6. Conditions and Relations
+
+Conditions are used in control structures like if and while statements.
+
+File Structure:
+----------------
+condition ::= expression RELATION expression
+RELATION ::= < | <= | = | <> | >= | >
+
+Explanation:
+----------------
+- A condition is an expression followed by a relational operator (<, <=, =, <>, >=, >), and another expression.
+- These conditions are used to control the flow of the program in if statements and while loops.
+
+7. Constants
+
+Constants come in three forms: integers, characters, and strings.
+
+File Structure:
+----------------
+integer_const ::= +no | -no | no
+character_const ::= 'letter' | 'digit'
+string_const ::= "string"
+
+Explanation:
+----------------
+- Integer Constants: These are numeric values, possibly with a sign (+ or -).
+- Character Constants: Represented by a single letter or digit enclosed in single quotes.
+- String Constants: A sequence of characters (letters or digits) enclosed in double quotes.
+
+8. Identifiers
+
+Identifiers are names used for variables, constants, and arrays. They follow the standard convention of starting with a letter and may contain letters and digits.
+
+File Structure:
+----------------
+identifier ::= letter { letter | digit }
+letter ::= A | B | ... | Z | a | b | ... | z
+digit ::= 0 | 1 | ... | 9
+
+Explanation:
+----------------
+- Identifiers start with a letter and can be followed by any combination of letters and digits.
+
+9. File Structure Overview
+
+Here's a brief summary of how a program written in this language is structured:
+
+1. Declarations Section:
+   - A list of variable declarations, each specifying the variable's name and type.
+
+2. Main Program Section:
+   - A series of statements enclosed in a BEGIN and END block.
+   - The statements can include assignments, conditionals (if), loops (while), and input/output operations.
+
+3. Termination:
+   - The program ends with a period (".")
